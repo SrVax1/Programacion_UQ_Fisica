@@ -1,3 +1,4 @@
+#Hecho por Jhon S. García
 # Defino la clase vector, producto escalar y por escalar
 class Vector:
     def __init__(self, x, y, z):
