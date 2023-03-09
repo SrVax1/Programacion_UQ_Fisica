@@ -1,4 +1,4 @@
-#Hecho por Jhon S. García
+#Hecho por Jhon S. García y Santiago Cardenas
 # Defino la clase vector, producto escalar y por escalar
 class Vector:
     def __init__(self, x, y, z):
@@ -32,6 +32,7 @@ class Matriz:
     self.a01=lista[0][1]
     self.a10=lista[1][0]
     self.a11=lista[1][1]
+    self.last_operated = self
 
   def __str__(self):
     return "|{:^5} {:^5}|\n|{:^5} {:^5}|".format(self.a00, self.a01, self.a10, self.a11)
@@ -65,16 +66,16 @@ class Matriz:
     return Matriz([[a00, a01], [a10, a11]])
   
   def iesima(self, i):
-     if i == 1:
-        return [self.a00, self.a10]
-     elif i == 2:
-        return [self.a01, self.a11]
-     else:
-        return None
+    if i == 1:
+      return [self.last_operated.a00, self.last_operated.a10]
+    elif i == 2:
+      return [self.last_operated.a01, self.last_operated.a11]
+    else:
+      return None
 
 # Preguntar qué quiere el usuario
-tipo = input("¿Quiere trabajar con vectores o matrices? (v/m): ")
-if tipo == "v":
+tipo = input("¿Quiere trabajar con vectores o matrices?: ")
+if tipo == "vectores":
   # Pido definir vectores
   print("Ingrese coordenadas del primer vector")
   x_1 = float(input("Componente X: "))
@@ -93,7 +94,6 @@ if tipo == "v":
   print("El resultado de los vectores es:")
   vec_1 = Vector(x_1, y_1, z_1)
   vec_2 = Vector(x_2, y_2, z_2)
-  esc1 = esc
   print("Vector 1: ", vec_1)
   print("Vector 2: ", vec_2)
   print("El escalar:", esc)
@@ -101,12 +101,21 @@ if tipo == "v":
   # Pedir qué quiere
   pregunta = int(input("¿Quiere producto punto o producto por escalar? (1 o 2 respectivamente): "))
   punto = vec_1 * vec_2
-  escalar = vec_1 * esc1
 
   if pregunta == 1:
     print("El resultado del producto punto es:", punto)
+  elif pregunta ==2:
+    pregunta_esc = int(input("¿Quiere multiplicar el vector 1 o 2 por el escalar?: "))
+    if pregunta_esc == 1:
+      print("El producto por un escalar y el vector 1 es:")
+      print(vec_1 * esc)
+    elif pregunta_esc == 2:
+      print("El producto por un escalar y el vector 2 es:")
+      print(vec_2 * esc)
+    else:
+      print("Número no válido")
   else:
-    print("El resultado del producto por escalar es:", escalar)
+    print("Número no válido")
 
 else:
    #Pedir a al usuario de forma estética :)
@@ -130,7 +139,7 @@ else:
   matriz_b = Matriz([[b00, b01], [b10, b11]])
   print(matriz_b)
 
-  escalar = int(input("Ingrese un escalar para multiplicar por la primera matriz: "))
+  escalar = int(input("Ingrese un escalar para multiplicar por la matriz: "))
 
   # Pedir qué quiere
   pregunta = int(input("¿Quiere sumar, restar o producto por un escalar entre matrices? (1, 2 o 3 respectivamente): "))
@@ -148,7 +157,7 @@ else:
     print("El producto por un escalar de la matriz 1 es:")
     print(matriz_a * escalar)
    elif pregunta_esc == 2:
-    print("El producto por un escalar de la matriz 1 es:")
+    print("El producto por un escalar de la matriz 2 es:")
     print(matriz_b * escalar)
    else:
     print("Número no válido")
