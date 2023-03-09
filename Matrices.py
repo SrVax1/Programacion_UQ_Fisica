@@ -32,7 +32,6 @@ class Matriz:
     self.a01=lista[0][1]
     self.a10=lista[1][0]
     self.a11=lista[1][1]
-    self.last_operated = self
 
   def __str__(self):
     return "|{:^5} {:^5}|\n|{:^5} {:^5}|".format(self.a00, self.a01, self.a10, self.a11)
@@ -67,9 +66,9 @@ class Matriz:
   
   def iesima(self, i):
     if i == 1:
-      return [self.last_operated.a00, self.last_operated.a10]
+      return [self.a00, self.a10]
     elif i == 2:
-      return [self.last_operated.a01, self.last_operated.a11]
+      return [self.a01, self.a11]
     else:
       return None
 
@@ -164,17 +163,19 @@ else:
   else:
    print("Número no válido")
 
-  matriz = Matriz([[a00, a01], [a10, a11]])
+matriza = Matriz([[a00, a10], [a01, b11]])
+matrizb = Matriz([[b00, b10], [b01, b11]])
 
-  i = int(input("Ingrese la i-ésima columna que desea obtener (1 o 2): "))
-  columna_i = matriz.iesima(i)
-
-  print("La columna i-ésima es: ")
-  print(columna_i)
-   
-   
-
-
-
-
-
+pregunta = int(input("¿De qué matriz desea obtener la i-ésima fila (1 o 2): "))
+if pregunta == 1:
+  i = int(input("Ingrese la i-ésima fila que desea obtener (1 o 2): "))
+  fila_i = matriza.iesima(i)
+  print("La fila i-ésima es: ")
+  print(fila_i)
+elif pregunta == 2:
+  i = int(input("Ingrese la i-ésima fila que desea obtener (1 o 2): "))
+  fila_i = matrizb.iesima(i)
+  print("La fila i-ésima es: ")
+  print(fila_i)
+else:
+  print("Número no válido")
