@@ -163,18 +163,18 @@ else:
   else:
    print("Número no válido")
 
-matriza = Matriz([[a00, a10], [a01, b11]])
-matrizb = Matriz([[b00, b10], [b01, b11]])
+#matriza = Matriz([[a00, a10], [a01, b11]])
+#matrizb = Matriz([[b00, b10], [b01, b11]])
 
 pregunta = int(input("¿De qué matriz desea obtener la i-ésima fila (1 o 2): "))
 if pregunta == 1:
   i = int(input("Ingrese la i-ésima fila que desea obtener (1 o 2): "))
-  fila_i = matriza.iesima(i)
+  fila_i = matriz_a.iesima(i)
   print("La fila i-ésima es: ")
   print(fila_i)
 elif pregunta == 2:
   i = int(input("Ingrese la i-ésima fila que desea obtener (1 o 2): "))
-  fila_i = matrizb.iesima(i)
+  fila_i = matriz_b.iesima(i)
   print("La fila i-ésima es: ")
   print(fila_i)
 else:
