@@ -1,4 +1,6 @@
-#(2) Escribe un programa de juegos de multiplicación para niños. El programa debe dar al jugador diez preguntas de multiplicación generadas al azar. Después de cada uno, el programa debe decirles si lo hicieron bien o mal y cuál es la respuesta correcta
+#(2) Escribe un programa de juegos de multiplicación para niños. 
+#El programa debe dar al jugador diez preguntas de multiplicación generadas al azar. Después de cada uno, 
+#el programa debe decirles si lo hicieron bien o mal y cuál es la respuesta correcta
 
 import random
 

@@ -1,4 +1,5 @@
-#(1) Escriba un programa que le permita al usuario pasar una temperatura de grados centígrados, farenheit o Kelvin a la escala térmica que el desee.
+#(1) Escriba un programa que le permita al usuario pasar una temperatura
+#de grados centígrados, farenheit o Kelvin a la escala térmica que el desee.
 
 def C_a_F(temp_c):
     return (temp_c * 1.8) + 32
