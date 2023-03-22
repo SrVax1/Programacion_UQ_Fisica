@@ -1,4 +1,4 @@
-#<p align="center"><strong>Parcial 1</strong></p>
+<h1 align="center">Parcial 1</h1>
 
 
 ## Clase de programacion
