@@ -1,3 +1,4 @@
+
 edad = int(input("Ingrese su edad: "))
 mes = int(input("Ingrese el mes de su cumpleaños (en número): "))
 
